@@ -1,5 +1,6 @@
 package io.sparta.doranawstest.service;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +20,7 @@ public class BoardService {
 		boardRepository.save(board);
 	}
 
+	@Cacheable(cacheNames = "board", key = "#id")
 	public BoardResponse getBoardById(Long id) {
 		Board board = boardRepository.findById(id).orElseThrow();
 

@@ -11,4 +11,4 @@ Content-Type: application/json
 }
 
 ### 게시글 조회 API
-POST localhost:8080/api/board/1
+GET localhost:8080/api/board/1
